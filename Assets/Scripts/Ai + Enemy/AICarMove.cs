@@ -1,8 +1,10 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AI;
 
-public class AICarMove : MonoBehaviour {
-
+public class AICarMove : MonoBehaviour
+{
 	[SerializeField]
 	GameObject targetAICar;
 	[SerializeField]
@@ -13,34 +15,31 @@ public class AICarMove : MonoBehaviour {
 	Vector3 startPos;
 	Vector3 startRot;
 
-	UnityEngine.AI.NavMeshAgent navMeshAgentCompornent;
-	const float CAR_SPEED_MAX = 1.0f;
+	NavMeshAgent navMeshAgentCompornent;
+	public float CAR_SPEED_MAX = 1.0f;
 
 	// Use this for initialization
-	void Start () {
-
+	void Start ()
+	{
 		navMeshAgentCompornent = this.GetComponent<UnityEngine.AI.NavMeshAgent>();
 		startPos = targetNavMeshObjects[0].transform.localPosition;
 		startRot = targetNavMeshObjects[0].transform.localEulerAngles;
 		targetNavMeshObjectCounts = targetNavMeshObjects.Length -1;
-
 	}
 
-	public void InitAICar () {
-
+	public void InitAICar ()
+	{
 		navMeshAgentCompornent.speed = 0.0f;
 		targetAICar.GetComponent<Animation>().Play("00_Stop");
 		StartCoroutine(startCar(3.0f));
-
 	}
 
-	IEnumerator startCar (float startDelayTime) {
-
+	IEnumerator startCar (float startDelayTime)
+	{
 		navMeshAgentCompornent.speed = 0.0f;
 		targetAICar.GetComponent<Animation>().Play("00_Stop");
 		yield return new WaitForSeconds(startDelayTime);
 
-		// Set destination
 		targetNavMeshObjectNow = 1;
 		navMeshAgentCompornent.SetDestination(targetNavMeshObjects[targetNavMeshObjectNow].transform.localPosition);
 		this.transform.localPosition = startPos;
@@ -49,13 +48,12 @@ public class AICarMove : MonoBehaviour {
 		yield return new WaitForSeconds(0.5f);
 		navMeshAgentCompornent.speed = CAR_SPEED_MAX;
 		targetAICar.GetComponent<Animation>().Play("01_Run");
-
 	}
 
 	
 	// Update is called once per frame
-	void Update () {
-
+	void Update ()
+	{
 		if (navMeshAgentCompornent.remainingDistance < 0.1f)
 		{
 			targetNavMeshObjectNow ++;
@@ -69,6 +67,5 @@ public class AICarMove : MonoBehaviour {
 				navMeshAgentCompornent.SetDestination(targetNavMeshObjects[targetNavMeshObjectNow].transform.localPosition);
 			}
 		}
-	
 	}
 }

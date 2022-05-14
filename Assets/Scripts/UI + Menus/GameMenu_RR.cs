@@ -12,6 +12,7 @@ public class GameMenu_RR : MonoBehaviour
     public GameObject carPart1, carPart2, carPart3;
     public GameObject gameStart;
 
+    public ReturnHome_RR returnHome_RR;
     public void Play()
     {
         carPart1.SetActive(true);
@@ -20,6 +21,8 @@ public class GameMenu_RR : MonoBehaviour
 
         gameUI.SetActive(true);
         gameMenu.SetActive(false);
+
+        returnHome_RR.SetPlayTimer();
     }
     public void GameResults()
     {

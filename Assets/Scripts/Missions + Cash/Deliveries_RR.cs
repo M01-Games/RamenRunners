@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DetectionSystem_RR : MonoBehaviour
+public class Deliveries_RR : MonoBehaviour
 {
         #region Variable
         //Variables (pulic can be changed in unity / private can ONLY be changed in script)
-    public GameMenu_RR gameMenu_RR;
+    public RandomDelivery_RR randomDelivery_RR;
     public Cash_RR cash_RR;
+    public ReturnHome_RR returnHome_RR;
         #endregion
 
         #region Methods
@@ -15,9 +16,11 @@ public class DetectionSystem_RR : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player")) //This makes sure that it was the player tha collided with the hazard and if it is then the script will run
         {
-            Debug.Log("Player Detected"); //Tells the system to display the text in "..."
-            gameMenu_RR.GameResults(); //Runs the results menu for the game
-            cash_RR.LevelEndFail();
+            Debug.Log("Delivery Completed"); //Tells the system to display the text in "..."
+            randomDelivery_RR.NewDelivery();
+            cash_RR.DeliveryCash();
+            returnHome_RR.SetNewTimer();
+            this.gameObject.SetActive(false);
         }
     }
         #endregion

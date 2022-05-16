@@ -39,9 +39,10 @@ public class GameMenu_RR : MonoBehaviour
         carPart2.transform.position = gameStart.transform.position;
         carPart3.transform.position = gameStart.transform.position;
 
-        carPart1.transform.Rotate(0f, 90f, 0f);
-        carPart2.transform.Rotate(0f, 90f, 0f);
-        carPart3.transform.Rotate(0f, 90f, 0f);
+        carPart1.transform.rotation = gameStart.transform.rotation;
+        carPart1.transform.rotation = gameStart.transform.rotation;
+        carPart1.transform.rotation = gameStart.transform.rotation;
+
     }
     public void GameModeEasy()
     {

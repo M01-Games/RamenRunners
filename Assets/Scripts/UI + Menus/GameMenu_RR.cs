@@ -17,10 +17,6 @@ public class GameMenu_RR : MonoBehaviour
     public GameObject policeCar1, policeCar2, policeCar3, policeCar4, policeCar5, policeCar6, policeCar7, policeCar8;
     public void Play()
     {
-        carPart1.SetActive(true);
-        carPart2.SetActive(true);
-        carPart3.SetActive(true);
-
         gameUI.SetActive(true);
         gameMenu.SetActive(false);
 
@@ -28,10 +24,6 @@ public class GameMenu_RR : MonoBehaviour
     }
     public void GameResults()
     {
-        carPart1.SetActive(false);
-        carPart2.SetActive(false);
-        carPart3.SetActive(false);
-
         gameUI.SetActive(false);
         gameMenu.SetActive(true);
 

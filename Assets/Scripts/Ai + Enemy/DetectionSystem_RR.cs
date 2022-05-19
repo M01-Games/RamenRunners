@@ -6,8 +6,8 @@ public class DetectionSystem_RR : MonoBehaviour
 {
         #region Variable
         //Variables (pulic can be changed in unity / private can ONLY be changed in script)
-    public GameMenu_RR gameMenu_RR;
-    public Cash_RR cash_RR;
+    public GameMenu_RR gameMenu_RR; //The game menu script
+    public Cash_RR cash_RR; //The cash system script
         #endregion
 
         #region Methods
@@ -17,7 +17,7 @@ public class DetectionSystem_RR : MonoBehaviour
         {
             Debug.Log("Player Detected"); //Tells the system to display the text in "..."
             gameMenu_RR.GameResults(); //Runs the results menu for the game
-            cash_RR.LevelEndFail();
+            cash_RR.LevelEndFail(); //Runs the level fail result
         }
     }
         #endregion

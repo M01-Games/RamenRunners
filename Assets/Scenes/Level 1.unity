@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1564624460}
-  m_IndirectSpecularColor: {r: 0.06053517, g: 0.06852782, b: 0.067327514, a: 1}
+  m_IndirectSpecularColor: {r: 0.059390046, g: 0.068248935, b: 0.06742974, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -7710,8 +7710,6 @@ GameObject:
   - component: {fileID: 205381634}
   - component: {fileID: 205381638}
   - component: {fileID: 205381637}
-  - component: {fileID: 205381636}
-  - component: {fileID: 205381635}
   m_Layer: 10
   m_Name: ReturnHome (1)
   m_TagString: Untagged
@@ -7733,37 +7731,6 @@ Transform:
   m_Father: {fileID: 2043304257}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &205381635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 205381633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 171b570af30630444babbe4157fbff33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameMenu_RR: {fileID: 1359353094}
-  cash_RR: {fileID: 1359353096}
-  Timer: {fileID: 392529011}
-  additionalTime: 20
-  timer: 20
-  startTimer: 20
---- !u!65 &205381636
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 205381633}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &205381637
 MeshRenderer:
   m_ObjectHideFlags: 0

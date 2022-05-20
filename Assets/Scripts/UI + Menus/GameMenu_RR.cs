@@ -24,6 +24,7 @@ public class GameMenu_RR : MonoBehaviour
     }
     public void GameResults() //The game results protocall
     {
+        Debug.Log("GameEnd"); //Tells the system to display the text in "..."
         gameUI.SetActive(false); //Turns off the game play UI
         gameMenu.SetActive(true); //Turns on the gamestart menu 
 

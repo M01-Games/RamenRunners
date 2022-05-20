@@ -26,11 +26,13 @@ public class Cash_RR : MonoBehaviour
     }
     public void LevelEndSuccess() //The outcome if the player gets home safely
     {
+        Debug.Log("GameEndSuccess"); //Tells the system to display the text in "..."
         playerCash = pendingPlayerCash; //Sets the players current cash to the value of the pending cash
         pendingPlayerCash = 0; //Resets the pending cash, ready for the next time the player goes out for deliveries
     }
     public void LevelEndFail() //The outcome if the player does not get home safely
     {
+        Debug.Log("GameEndFail"); //Tells the system to display the text in "..."
         pendingPlayerCash = 0; //Resets the pending cash, ready for the next time the player goes out for deliveries
     }
     public void TimerUpgreade() //The timer upgrade the player can buy on the game start UI
